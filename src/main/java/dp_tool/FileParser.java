@@ -192,24 +192,6 @@ public class FileParser {
 		return instances;
 	}
 	
-	//test file must be in arff file format
-	public void getLabelOrder(String test_file) throws IOException{
-		BufferedReader br = new BufferedReader(new FileReader(test_file));
-		
-		String line = br.readLine();
-		
-		while(line != null){
-			 if(line.contains("{") && line.contains("}")){
-//				 int idx = line.indexOf("{");
-//				 String label = line.substring(idx+1, line.length()-1);
-				 CLI.label_order.add(line);
-				 break;
-			 }
-		}
-		
-		br.close();
-	}
-	
 	public void getHeader(String csv_file) throws IOException{
 		BufferedReader br = new BufferedReader(new FileReader(csv_file));
 		

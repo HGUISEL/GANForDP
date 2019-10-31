@@ -27,7 +27,7 @@ public class CLI {
 	static String train = "Train" + File.separator + "train_";
 	static String test = "Test" + File.separator + "test_";
 	static String header;
-//	static String label_order;
+	static String label_order;
 	static double buggy_cnt;
 	static double clean_cnt;
 	String input_extension;
@@ -37,8 +37,6 @@ public class CLI {
 	ArrayList <String> fileList = new ArrayList<String>();
 	int repeat = 10, folds = 2;
 	ArrayList<String> tokens = new ArrayList<String>();
-	static ArrayList <String> label_order = new ArrayList<String>();
-	
 	
 	
 	public void parsePath(){
@@ -259,6 +257,7 @@ public class CLI {
 			                                 savingDir + test + j + "_"  + k + ".arff",
 			                                 savingDir + train  + i + "_test_" + k + "_GAN" + j + ".txt", 
 			                                 savingDir + train  + i + "_test_" + k + "_GAN" + ".csv",
+//			                                 savingDir + train  + i + "_test_" + k + "_GAN" + j + ".csv", 너무 파일이 많아져서 그냥 csv 하나에 모두 다 저장하기
 			                                 savingDir + resultFileName, i, k, j,
 			                                 strClassifier);
 			                        }

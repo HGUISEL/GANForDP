@@ -177,12 +177,12 @@ public class RatioUtil {
                      bug_data.add(line);
                   }
                   
-                  /*if(line.contains("{") && line.contains("}")){
+                  if(line.contains("{") && line.contains("}")){
 //                	System.out.println(line);
                 	int idx = line.indexOf("{");
                 	CLI.label_order = line.substring(idx, line.length());
                 	System.out.println(CLI.label_order);
-                  }*/
+                  }
                   
                   
                      
