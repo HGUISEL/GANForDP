@@ -199,31 +199,6 @@ public class CLI {
 		                  gan.runCommands(savingDir + train + "buggy_" + i + "_" + j + ".csv", 
 		                        savingDir + "Train" + File.separator + "Generated_" + i + "_" + j + ".csv",
 		                        Integer.toString(generating_num));
-		                  
-		                /*  int loop_counter = 1;
-		                  for(int k = 0; k < (CLI.clean_cnt - CLI.buggy_cnt) / generating_num; k++){
-		                	  System.out.println("Generating number : " + generating_num);
-			                  gan.runCommands(savingDir + train + "buggy_" + i + "_" + j + ".csv", 
-			                        savingDir + "Train" + File.separator + "Generated_" + i + "_" + j + ".csv",
-			                        Integer.toString(generating_num)); //
-			                  
-			                  cnt++;
-			                  loop_counter++;
-			                  System.out.println(cnt + "th execution....");  
-		                  }
-		                  
-		                  if((CLI.clean_cnt - CLI.buggy_cnt) - (generating_num * loop_counter) != 0
-		                		  && (CLI.clean_cnt - CLI.buggy_cnt) - (generating_num * loop_counter) > 0){
-		                	  System.out.println((CLI.clean_cnt - CLI.buggy_cnt) - (generating_num * loop_counter) + "buggy data needed more");
-		                	  System.out.println("generating remainder needed buggy data");
-		                	  
-		                	  gan.runCommands(savingDir + train + "buggy_" + i + "_" + j + ".csv", 
-				                        savingDir + "Train" + File.separator + "Generated_" + i + "_" + j + ".csv",
-				                        Double.toString((CLI.clean_cnt - CLI.buggy_cnt) - (generating_num * loop_counter))); 
-		                	  
-		                	  cnt++;
-			                  System.out.println(cnt + "th execution...."); 
-		                  }*/
 		               }
 		            }
 	          
@@ -257,7 +232,7 @@ public class CLI {
 			                                 savingDir + test + j + "_"  + k + ".arff",
 			                                 savingDir + train  + i + "_test_" + k + "_GAN" + j + ".txt", 
 			                                 savingDir + train  + i + "_test_" + k + "_GAN" + ".csv",
-//			                                 savingDir + train  + i + "_test_" + k + "_GAN" + j + ".csv", ³Ê¹« ÆÄÀÏÀÌ ¸¹¾ÆÁ®¼­ ±×³É csv ÇÏ³ª¿¡ ¸ğµÎ ´Ù ÀúÀåÇÏ±â
+//			                                 savingDir + train  + i + "_test_" + k + "_GAN" + j + ".csv", ë„ˆë¬´ íŒŒì¼ì´ ë§ì•„ì ¸ì„œ ê·¸ëƒ¥ csv í•˜ë‚˜ì— ëª¨ë‘ ë‹¤ ì €ì¥í•˜ê¸°
 			                                 savingDir + resultFileName, i, k, j,
 			                                 strClassifier);
 			                        }
@@ -303,11 +278,6 @@ public class CLI {
 			           }
 		            }
 	      }
-	          
-	      	
-		  
-//	      } ./DebugServer -i "./data/" -e "./python.exe" -p "/GAN.py" -c "weka.classifiers.functions.Logistic"
-	      
 	}
 	
 	 /**
