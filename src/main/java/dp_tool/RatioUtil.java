@@ -48,8 +48,6 @@ public class RatioUtil {
             
             tok = line.split(",");
             
-//            System.out.println(tok[tok.length-1]);
-            
             Integer count = label_count.get(tok[tok.length-1]);
             
             if(count == null){
@@ -77,7 +75,7 @@ public class RatioUtil {
          
          while(line != null){
             
-            if(line.contains("{") || line.contains("}")){// || line.contains("Class")){
+            if(line.contains("{") || line.contains("}")){
                tok = line.split(" ");
                System.out.println(line);
                
@@ -86,9 +84,7 @@ public class RatioUtil {
                int idx = tok[tok.length - 1].indexOf(",");
                
                label1 = tok[tok.length - 1].substring(1, idx);
-//               System.out.println(label1);
-               label2 = tok[tok.length - 1].substring(idx+1, tok[tok.length - 1].length()-1);
-//               System.out.println(label2);
+               label2 = tok[tok.length - 1].substring(idx+1, tok[tok.length - 1].length()-1);;
             }
             
             line = br1.readLine();
@@ -99,7 +95,6 @@ public class RatioUtil {
          BufferedReader br2 = new BufferedReader(new FileReader(input_path));
          
          line = br2.readLine();
-//         line = br2.readLine();
          while(line != null){
             
             Integer count1 = label_count.get(label1);
@@ -131,9 +126,7 @@ public class RatioUtil {
       
       while(itr.hasNext()){
          Map.Entry<String, Integer> e = (Map.Entry<String, Integer>)itr.next();
-         
-//         System.out.println(e.getKey() + ", " + e.getValue());
-         
+
          if(e.getValue() > clean_count){
             clean_count = e.getValue();
             CLI.clean_label = e.getKey();
@@ -157,7 +150,7 @@ public class RatioUtil {
          
          for(int i = 0; i < repeat; i++){
             for(int j = 0; j < folds; j++){
-               BufferedReader br = new BufferedReader(new FileReader(CLI.savingDir + CLI.train + i + "_" + j +".arff")); // + CLI.input_file_name + "_"
+               BufferedReader br = new BufferedReader(new FileReader(CLI.savingDir + CLI.train + i + "_" + j +".arff")); 
                String line = br.readLine();
                line = br.readLine();
                
@@ -165,15 +158,10 @@ public class RatioUtil {
                
                while(line != null){
                   if(line.contains(CLI.clean_label) && !line.contains("@")){
-//                     System.out.println("This instance is Clean");
-//                     System.out.println(line);
                      clean_data.add(line);
                   }
                   
                   else if(line.contains(CLI.buggy_label) && !line.contains("@")){
-//                     System.out.println("This instance has Buggy");
-//                	  if(line.contains("@"))
-//                		  System.out.println(line);
                      bug_data.add(line);
                   }
                   
@@ -230,7 +218,6 @@ public class RatioUtil {
    
    public void getRatio(String input_path) throws IOException{
       
-//      String save_path = "D:/HGU_PostCapstone/datafiles/20190718/FileRatios.csv";
       File folder = new File(input_path);
       CSVWriter cw = new CSVWriter(new FileWriter(input_path + File.separator + "FileRatios.csv"));
       String [] header = {"File Name", "buggy","clean", "total", "ratio"};
@@ -258,7 +245,6 @@ public class RatioUtil {
          temp = str.split(File.separator);
          
          fileName = temp[temp.length-1].replace(".csv", "");
-//         fileName = str.replace(".csv", "");
          fileName = fileName.replace(input_path, "");
          
          BufferedReader br = new BufferedReader(new FileReader(str));
