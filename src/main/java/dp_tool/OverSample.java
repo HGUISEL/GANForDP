@@ -38,18 +38,10 @@ public class OverSample {
 	         smote.setPercentage((generating_ratio/CLI.buggy_cnt) * 100);//((generating_ratio + 0.5)*100);
 	         Instances smote_ins = Filter.useFilter(data, smote);
 	         
-	         /*CSVSaver saver = new CSVSaver();
-	         saver.setInstances(smote_ins);
-	         saver.setFile(new File(CLI.savingDir + File.separator + "Train" + File.separator + "SMOTE_" + i + "_" + n + ".csv"));
-	         saver.writeBatch();*/
-	         
 	         ArffSaver arffSaver = new ArffSaver();
 	         arffSaver.setInstances(smote_ins);
 	         arffSaver.setFile(new File(CLI.savingDir + File.separator + "Train" + File.separator + "SMOTE_" + i + "_" + n + ".arff"));
 	         arffSaver.writeBatch();
-	         
-//	         make_compatible(CLI.savingDir + File.separator + "Train" + File.separator + "SMOTE_" + i + "_" + n + ".csv", i, n);
-	        
 	         
 	         setLabelOrder(CLI.savingDir + File.separator + "Train" + File.separator + "SMOTE_" + i + "_" + n + ".arff");
 	         
@@ -75,15 +67,10 @@ public class OverSample {
         
         while(line != null){
             if(line.contains(CLI.clean_label) && !line.contains("@")){
-//               System.out.println("This instance is Clean");
-//               System.out.println(line);
                clean_data.add(line);
             }
             
             else if(line.contains(CLI.buggy_label) && !line.contains("@")){
-//               System.out.println("This instance has Buggy");
-//          	  if(line.contains("@"))
-//          		  System.out.println(line);
                buggy_data.add(line);
             }
             
