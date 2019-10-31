@@ -108,10 +108,6 @@ public class FileParser {
 			fileNames.add(temp.substring(num+1, temp.length()));
 		}
 		
-		
-//		for(String str : fileNames)
-//			System.out.println("File names : " + str);
-		
 		System.out.println("File Entries ended....");
 		
 		for(String file_name : fileNames){
@@ -123,7 +119,7 @@ public class FileParser {
 			int idx = file_name.indexOf(File.separator);
 			file_name = file_name.substring(idx+1, file_name.length());
 				
-			File origin_file = new File(savingDir + File.separator + file_name); // <-- 이부분에 AndResGuard가 두번 겹침 해결해야함!!
+			File origin_file = new File(savingDir + File.separator + file_name); 
 			System.out.println("saving Dir : " + savingDir);
 			System.out.println("file_name : " + file_name);
 			System.out.println("train_test_dir : " + train_test_dir);
@@ -228,7 +224,6 @@ public class FileParser {
 		for (final File fileEntry : folder.listFiles()){
 			
 			if(fileEntry.toString().endsWith(".arff")){
-//				System.out.println("file Entry : " + fileEntry);
 				fileList.add(fileEntry.toString());
 			}
 		}
