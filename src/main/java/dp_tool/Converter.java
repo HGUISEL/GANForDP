@@ -103,8 +103,6 @@ public class Converter {
 			input_directory = input_directory + directories.get(i) + "/";
 		}
 		
-//		System.out.println(input_directory);
-		
 		String new_csv_name = input_directory + csv_name + ".csv";
 		
 		//load ARFF
@@ -161,8 +159,6 @@ public class Converter {
 	}
 	
 	public String arffToCSV(String arff_path){
-		
-//		int index = arff_path.indexOf(".arff");
 		
 		String default_name = arff_path.replace(".arff", ".csv"); //arff_path.substring(0, index) + ".csv";
 		
