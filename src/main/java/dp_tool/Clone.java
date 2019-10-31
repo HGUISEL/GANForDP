@@ -77,11 +77,6 @@ public class Clone {
 			
 			conv.csvToArff(CLI.savingDir + CLI.train + "clone_" + repeat + "_" + fold + ".csv");
 		}
-		
-		
-//		OverSample os = new OverSample();
-//		os.make_compatible(CLI.savingDir + CLI.train + "clone_" + repeat + "_" + fold + ".csv", repeat, fold); // make compatible 필요없음. 헤더 문제라 converting할때 해결해주면 됌.
-	
 	}
 	
 	public void correctLabelOrder(){
