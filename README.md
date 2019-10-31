@@ -1,4 +1,11 @@
 # GANForDP
-This tool uses a deep learning model "GAN" to resolve data imbalance problem occurred in machine learning data.
-Users can easily get result of their datafiles in four ways of oversampling data. (one of a four way is a baseline method)
-Input directory path, python exe path, GAN.py path and evaluation classifier must be set.
+This tool uses a deep learning model "GAN" to resolve data imbalance problem occurred when using machine learning.
+When user sets input directory path, the tool automatically resolves data imbalance by generating fake data with GAN.
+
+# materials
+- input file in csv format or arff format.
+
+#How to use
+- set input directory path, python execution path, GAN.py path and name of evaluation classifier.
+ex) -i "./datafiles/" -e "/home/jinyi/anaconda2/envs/tensorflow/bin/python3" -p "./GAN.py" -c "weka.classifiers.bayes.NaiveBayes"
+
