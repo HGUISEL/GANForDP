@@ -78,9 +78,4 @@ public class Clone {
 			conv.csvToArff(CLI.savingDir + CLI.train + "clone_" + repeat + "_" + fold + ".csv");
 		}
 	}
-	
-	public void correctLabelOrder(){
-		
-	}
-
 }
