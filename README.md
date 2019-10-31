@@ -9,3 +9,7 @@ When user sets input directory path, the tool automatically resolves data imbala
 - set input directory path, python execution path, GAN.py path and name of evaluation classifier.
 ex) -i "./datafiles/" -e "/home/jinyi/anaconda2/envs/tensorflow/bin/python3" -p "./GAN.py" -c "weka.classifiers.bayes.NaiveBayes"
 
+
+
+Please report any issues to jinyi1187@gmail.com
+Thank you.
