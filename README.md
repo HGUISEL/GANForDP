@@ -5,7 +5,7 @@ When user sets input directory path, the tool automatically resolves data imbala
 # materials
 - input file in csv format or arff format.
 
-#How to use
+# How to use
 - set input directory path, python execution path, GAN.py path and name of evaluation classifier.
 ex) -i "./datafiles/" -e "/home/jinyi/anaconda2/envs/tensorflow/bin/python3" -p "./GAN.py" -c "weka.classifiers.bayes.NaiveBayes"
 
