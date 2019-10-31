@@ -43,7 +43,6 @@ public class WekaUtil {
 		   String [] csv_header = {model, "Correctly matched", "Correct Accuracy", "Incorrectly matched", "Incorrect Accuracy", "TP Rate", "FP Rate", "Precision", "Recall", "F-Measure", "ROC-Area", strClassifier};
 	       cw.writeNext(csv_header);
 	       
-//	       Instances trainingIns = loadArff(train_path);
 	       int buggy_label_index = trainingIns.attribute(trainingIns.classIndex()).indexOfValue("buggy");
 	       
 	       String [] csv_body = {"train_" + train_num + "_" + "test_" + test_num + "_" + repeat_num + "\t", 
@@ -202,23 +201,7 @@ public class WekaUtil {
 	      
 	      BufferedWriter m_bw = new BufferedWriter(new FileWriter(final_result_path, true));
 	      PrintWriter m_pw = new PrintWriter(m_bw, true);   
-	      
-	      /*if(model.equalsIgnoreCase("GAN")){
-	         result_in_csv(trainingIns, cw, pw, m_pw, eval, train_num, test_num, repeat_num, strClassifier);
-	         header_flag = 1;
-	      }
-	      
-	      else if(model.equalsIgnoreCase("SMOTE")){
-	         result_in_csv(trainingIns, cw, pw, m_pw, eval, train_num, test_num, repeat_num, strClassifier);
-	         header_flag = 1;
-	      }
-	      
-	  
-	      else if(model.equalsIgnoreCase("GENERAL")){
-	         result_in_csv(trainingIns, cw, pw, m_pw, eval, train_num, test_num, repeat_num, strClassifier);
-	         header_flag = 1;
-	      }*/
-	      
+      
 	      result_in_csv(trainingIns, cw, pw, m_pw, eval, train_num, test_num, repeat_num, strClassifier);
 	      header_flag = 1;
 	      
